@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lab_1</title>
+    <link rel="shortcut icon" href="images/15.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="header__title">Лабораторная работа №1 <br> по "Веб-программированию"</h1>
+      <h3 class="header__text">Выполнила Кириллова Надежда Сергеевна<br>Группа P3213, вариант №2409</h3>
+    </div>
+    <div class="content">
+      <div class="image" class="block">
+        <img class="graph" src="images/areas.png" alt="график" href="https://itmo.ru/ru/">
+        <canvas class="canvas"></canvas>
+      </div>
+      <form class="form" class="block">
+        <div class="form_input">
+          <p class="X_input">X</p>
+          <div class="X_input">
+            <input type="radio" class="radio_form_input" id="X_Choice_1" name="X" value="-2">
+            <label for="X_Choice_1">
+              <span data-hover="-2">-2</span>
+            </label>
+            <input type="radio" class="radio_form_input" id="X_Choice_2" name="X" value="-1,5">
+            <label for="X_Choice_2">
+              <span data-hover="-1,5">-1,5</span>
+            </label>
+            <input type="radio" class="radio_form_input" id="X_Choice_3" name="X" value="-1">
+            <label for="X_Choice_3">
+              <span data-hover="-1">-1</span>
+            </label>
+            <input type="radio" class="radio_form_input" id="X_Choice_4" name="X" value="-0,5">
+            <label for="X_Choice_4">
+              <span data-hover="-0,5">-0,5</span>
+            </label>
+            <input type="radio" class="radio_form_input" id="X_Choice_5" name="X" value="0">
+            <label for="X_Choice_5">
+              <span data-hover="0">0</span>
+            </label>
+            <input type="radio" class="radio_form_input" id="X_Choice_6" name="X" value="0,5">
+            <label for="X_Choice_6">
+              <span data-hover="0,5">0,5</span>
+            </label>
+            <input type="radio" class="radio_form_input" id="X_Choice_7" name="X" value="1">
+            <label for="X_Choice_7">
+              <span data-hover="1">1</span>
+            </label>
+            <input type="radio" class="radio_form_input" id="X_Choice_8" name="X" value="1,5">
+            <label for="X_Choice_8">
+              <span data-hover="1,5">1,5</span>
+            </label>
+            <input type="radio" class="radio_form_input" id="X_Choice_9" name="X" value="2">
+            <label for="X_Choice_9">
+              <span data-hover="2">2</span>
+            </label>
+          </div>
+        </div>
+        <input type="Y_input" class="form_input" placeholder="Y">
+        <input type="R_input" class="form_input" placeholder="R">
+        <button class="form_button" type="button" href="script/script.php">Узнать ответ</button>
+      </form>
+    </div>
+    <div class="clear"></div>
+    <a href="https://github.com/landameens?tab=repositories" class="link-to-page" target="_blank"><img src="images/dbl.jpg" alt=""></a>
+    <p class="ifmo">
+      <a href="https://ifmo.ru/ru"><img src="images/itmo-logo.png"></a>
+    </p>
+    <span id="doc_time">
+      Дата и время
+    </span>
+    <script src="scripts/main.js"></script>
+  </body>
+</html> 
