@@ -56,8 +56,8 @@ body {
   .form {
     position: relative;
     width: 500px;
-      text-align: center;
-      margin: 5% auto 5%;
+    text-align: center;
+    margin: auto;
   }
 
   .form_input {
