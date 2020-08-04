@@ -67,11 +67,24 @@ ctx.moveTo(10, 177);
 ctx.lineTo(10, 183);
 ctx.stroke();
 
+ctx.moveTo(320, 175);
+ctx.lineTo(330, 180);
+ctx.lineTo(320, 185);
+ctx.stroke();
+
+ctx.moveTo(145, 10);
+ctx.lineTo(150, 0);
+ctx.lineTo(155, 10);
+ctx.stroke()
 ctx.closePath();
 
+ctx.font = "15px Verdana";
+ctx.strokeText("R/2", 210, 170);
+ctx.strokeText("R/2", 70, 170);
+ctx.strokeText("R/2", 160, 115);
+ctx.strokeText("R/2", 160, 255);
 
-
-
-
-
-
+ctx.strokeText("R", 285, 170);
+ctx.strokeText("R", 5, 170);
+ctx.strokeText("R", 160, 45);
+ctx.strokeText("R", 160, 325);
