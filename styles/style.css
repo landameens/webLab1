@@ -15,7 +15,7 @@ body {
     font-size: 4em;
     font-weight: 600;
     margin: 0 0;    
-    text-shadow: 3px 3px 1px rgba(245, 119, 224, 0.466);
+    text-shadow: 3px 3px 1px rgba(245, 117, 224, 0.46);
     }
 
   h3 {
@@ -41,7 +41,7 @@ body {
   .header {
     display: block;
     padding: 8px 50px;
-    background-color: rgb(116, 135, 255);
+    background-color: #7487ff;
     background-repeat: no-repeat;
     background-size: contain;
     margin-bottom: 100px;
@@ -79,12 +79,12 @@ body {
 .X_input{
   padding: 0;
   margin: 0;
-  color: rgb(108, 127, 250);
+  color: #6c7ffa;
 }
 
 .form_input::-webkit-input-placeholder {
   opacity: 0.6;
-  color: rgb(0, 4, 255);
+  color: #0004ff;
 }
 
 .form_input:focus {
@@ -126,12 +126,12 @@ body {
 }
 
 .radio_form_input:not(:checked) + label{
-  background-color: rgb(146, 221, 255);
+  background-color: #92ddff;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 .radio_form_input:checked + label{
-  background-color: rgb(116, 135, 255);
+  background-color: #7487ff;
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -200,7 +200,7 @@ body {
     border: none;
     border-radius: 8px;
     outline: none;
-    background-color: rgb(116, 135, 255);
+    background-color: #7487ff;
     background-clip: border-box;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
@@ -241,8 +241,8 @@ body {
   }
  
   .image{
-    margin-top: 5%;
-    margin-left: 10%;
+    margin-top: 2%;
+    margin-left: 5%;
     position: relative;
     float: left;
   }
