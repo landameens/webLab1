@@ -47,10 +47,18 @@ body {
     margin-bottom: 100px;
   }
 
-  .header__title {
+  .header > .title {
     color: #fff;
     text-align: start;
     display: block;
+    margin: 0 0;
+    padding-left: 0;
+  }
+
+  .content{
+    display: block;
+    margin: 0 auto;
+    box-align: center
   }
 
   .form {
@@ -220,10 +228,13 @@ body {
     margin: 0 auto;
   }
 
-  .graph {
-    width: 300px;
+  canvas {
     padding-right: 0;
     object-position: right;
+    margin-top: 2%;
+    margin-left: 5%;
+    position: relative;
+    float: left;
   }
 
   .link-to-page {
@@ -239,13 +250,6 @@ body {
     height: auto;
     display: block;
   }
- 
-  .image{
-    margin-top: 2%;
-    margin-left: 5%;
-    position: relative;
-    float: left;
-  }
 
   .clear {
     clear: both;
@@ -254,12 +258,6 @@ body {
   .ifmo{
     box-align: center;
     margin: 3% auto 0;
-  }
-
-  .content{
-    display: block;
-    margin: 0 auto;
-    box-align: center
   }
 
   .block{
