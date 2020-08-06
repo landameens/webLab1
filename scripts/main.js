@@ -86,9 +86,6 @@ ctx.fillText("R", 160, 45);
 ctx.fillText("R", 160, 325);
 
 $(document).ready(function(){
-    $('.form_button').on('click', function () {
-        alert('А это еще не готово! Надо подождать...');
-    })
 
     $('#Y_input').on('change',function () {
         yValueCheck($(this).val());
@@ -97,6 +94,13 @@ $(document).ready(function(){
     $('#R_input').on('change',function () {
         rValueCheck($(this).val());
     });
+
+    let request = new FormData(document.forms.namedItem('notes'));
+
+    let xhrRequest = new XMLHttpRequest();
+    xhrRequest.open("POST", "scripts/script.php")
+    xhrRequest.send(request);
+
 });
 
 function yValueCheck(value) {

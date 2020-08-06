@@ -19,10 +19,10 @@
     <div class="content">
       <canvas id="canvas" width="350" height="350"></canvas>
 
-      <form class="form" method="post" action="scripts/script.php">
+      <form name="notes" class="form" method="post" action="scripts/script.php">
         <div class="form_input">
-          <p class="X_input">X</p>
-          <div class="X_input">
+          <div class="X_input" id="X_Choice">
+            <label for="X_Choice" id="X_label">X</label>
             <input type="radio" class="radio_form_input" id="X_Choice_1" name="X" value="-2">
             <label for="X_Choice_1">
               <span data-hover="-2">-2</span>
@@ -62,9 +62,9 @@
           </div>
         </div>
         <p id="for_Y"></p>
-        <input id="Y_input" class="form_input" placeholder="Y">
+        <input id="Y_input" name="Y" class="form_input" placeholder="Y">
         <p id="for_R"></p>
-        <input id="R_input" class="form_input" placeholder="R">
+        <input id="R_input" name="R" class="form_input" placeholder="R">
         <button class="form_button" type="button">Узнать ответ</button>
       </form>
 
@@ -72,7 +72,30 @@
     <div class="clear"></div>
 
     <table>
-
+      <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Result</th>
+        <th>Время выполнения</th>
+        <th>Текущее время</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
     </table>
     <a href="https://github.com/landameens/landameens.github.io" class="link-to-page" target="_blank"><img src="images/dbl.jpg" alt=""></a>
   </main>
