@@ -85,7 +85,6 @@ ctx.fillText("R", 5, 170);
 ctx.fillText("R", 160, 45);
 ctx.fillText("R", 160, 325);
 
-
 $(document).ready(function(){
     $('.form_button').on('click', function () {
         alert('А это еще не готово! Надо подождать...');
@@ -94,11 +93,14 @@ $(document).ready(function(){
     $('#Y_input').on('change',function () {
         yValueCheck($(this).val());
     });
+
+    $('#R_input').on('change',function () {
+        rValueCheck($(this).val());
+    });
 });
 
 function yValueCheck(value) {
-    const pleaseNumberInputMessage = `Пожалуйста введите число от -5 до 5.`;
-    const errorMessage = 'Значение должно быть в пределах от -5 до 5.';
+    const errorMessage = 'Значение Y должно быть в пределах от -5 до 5.';
 
     if (!isNaN(Number(value))) {
         if (value >= -5) {
@@ -112,10 +114,33 @@ function yValueCheck(value) {
             }
         } else {
             $('#for_Y').text(errorMessage);
-            return errorMessage;
+            return false;
         }
     } else {
-        $('#for_Y').text(pleaseNumberInputMessage);
-        return pleaseNumberInputMessage;
+        $('#for_Y').text(errorMessage);
+        return false;
+    }
+}
+
+function rValueCheck(value) {
+    const errorMessage = 'Значение R должно быть в пределах от 2 до 5.'
+    if (!isNaN(Number(value))) {
+        if (value >= 2) {
+            if (value <= 5) {
+                console.log('R validation is TRUE')
+                $('#for_R').text('');
+                return true
+            } else {
+                $('#for_R').text(errorMessage);
+                return false;
+            }
+        }
+        else {
+            $('#for_R').text(errorMessage);
+            return false;
+        }
+    } else {
+        $('#for_R').text(errorMessage);
+        return false;
     }
 }
