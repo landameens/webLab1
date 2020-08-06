@@ -36,8 +36,9 @@ body {
   p {
     position: relative;
     font-family: sans-serif;
-    font-size: 30px;
-    font-weight: 300;    
+    color: #6c7ffa;
+    font-size: 15px;
+    font-weight: 200;
     line-height: 2;
     letter-spacing: 1px;
     text-align: left;

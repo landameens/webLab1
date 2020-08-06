@@ -91,7 +91,9 @@ $(document).ready(function(){
         alert('А это еще не готово! Надо подождать...');
     })
 
-    $('#Y_input').on('change', yValueCheck($(this).val()));
+    $('#Y_input').on('change',function () {
+        yValueCheck($(this).val());
+    });
 });
 
 function yValueCheck(value) {
@@ -101,18 +103,19 @@ function yValueCheck(value) {
     if (!isNaN(Number(value))) {
         if (value >= -5) {
             if (value <= 5) {
-                alert(true)
+                console.log('Y validation is TRUE')
+                $('#for_Y').text('');
                 return true
             } else {
-                alert(errorMessage);
-                return errorMessage;
+                $('#for_Y').text(errorMessage);
+                return false;
             }
         } else {
-            alert(errorMessage);
+            $('#for_Y').text(errorMessage);
             return errorMessage;
         }
     } else {
-        alert(pleaseNumberInputMessage);
+        $('#for_Y').text(pleaseNumberInputMessage);
         return pleaseNumberInputMessage;
     }
 }
