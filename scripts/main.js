@@ -79,12 +79,12 @@ ctx.stroke()
 ctx.closePath();
 
 ctx.font = "15px Verdana";
-ctx.strokeText("R/2", 210, 170);
-ctx.strokeText("R/2", 70, 170);
-ctx.strokeText("R/2", 160, 115);
-ctx.strokeText("R/2", 160, 255);
+ctx.fillText("R/2", 210, 170);
+ctx.fillText("R/2", 70, 170);
+ctx.fillText("R/2", 160, 115);
+ctx.fillText("R/2", 160, 255);
 
-ctx.strokeText("R", 285, 170);
-ctx.strokeText("R", 5, 170);
-ctx.strokeText("R", 160, 45);
-ctx.strokeText("R", 160, 325);
+ctx.fillText("R", 285, 170);
+ctx.fillText("R", 5, 170);
+ctx.fillText("R", 160, 45);
+ctx.fillText("R", 160, 325);
