@@ -1,7 +1,3 @@
-document.querySelector('button').onclick = function() {
-    alert('А это еще не готово! Надо подождать...');
-}
-
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -88,3 +84,35 @@ ctx.fillText("R", 285, 170);
 ctx.fillText("R", 5, 170);
 ctx.fillText("R", 160, 45);
 ctx.fillText("R", 160, 325);
+
+
+$(document).ready(function(){
+    $('.form_button').on('click', function () {
+        alert('А это еще не готово! Надо подождать...');
+    })
+
+    $('#Y_input').on('change', yValueCheck($(this).val()));
+});
+
+function yValueCheck(value) {
+    const pleaseNumberInputMessage = `Пожалуйста введите число от -5 до 5.`;
+    const errorMessage = 'Значение должно быть в пределах от -5 до 5.';
+
+    if (!isNaN(Number(value))) {
+        if (value >= -5) {
+            if (value <= 5) {
+                alert(true)
+                return true
+            } else {
+                alert(errorMessage);
+                return errorMessage;
+            }
+        } else {
+            alert(errorMessage);
+            return errorMessage;
+        }
+    } else {
+        alert(pleaseNumberInputMessage);
+        return pleaseNumberInputMessage;
+    }
+}
