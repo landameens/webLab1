@@ -124,23 +124,29 @@ function yValueCheck(value) {
 
 function rValueCheck(value) {
     const errorMessage = 'Значение R должно быть в пределах от 2 до 5.'
-    if (!isNaN(Number(value))) {
-        if (value >= 2) {
-            if (value <= 5) {
-                console.log('R validation is TRUE')
-                $('#for_R').text('');
-                return true
+
+    if (value === ''){
+        $('#for_R').text('');
+    }
+    else {
+        if (!isNaN(Number(value))) {
+            if (value >= 2) {
+                if (value <= 5) {
+                    console.log('R validation is TRUE')
+                    $('#for_R').text('');
+                    return true
+                } else {
+                    $('#for_R').text(errorMessage);
+                    return false;
+                }
             } else {
                 $('#for_R').text(errorMessage);
                 return false;
             }
-        }
-        else {
+        } else {
             $('#for_R').text(errorMessage);
             return false;
         }
-    } else {
-        $('#for_R').text(errorMessage);
-        return false;
     }
+
 }
