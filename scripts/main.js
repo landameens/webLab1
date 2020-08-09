@@ -87,31 +87,45 @@ ctx.fillText("R", 160, 325);
 
 $(document).ready(function(){
 
-    $('#Y_input').on('change',function () {
+    let getY = $('#Y_input').on('change',function () {
         yValueCheck($(this).val());
     });
 
-    $('#R_input').on('change',function () {
+    let getR = $('#R_input').on('change',function () {
         rValueCheck($(this).val());
     });
 
-    let request = new FormData(document.forms.namedItem('notes'));
+    $('.form_button').on('click', function (){
+        if (getY && getR){
+            let request = new FormData(document.forms.namedItem('notes'));
 
-    let xhrRequest = new XMLHttpRequest();
-    xhrRequest.open("POST", "scripts/script.php")
-    xhrRequest.send(request);
+            let xhrRequest = new XMLHttpRequest();
+            xhrRequest.open("POST", "scripts/script.php");
+            console.log(request);
+            xhrRequest.send(request);
+        }
+    });
 
 });
 
 function yValueCheck(value) {
     const errorMessage = 'Значение Y должно быть в пределах от -5 до 5.';
 
-    if (!isNaN(Number(value))) {
-        if (value >= -5) {
-            if (value <= 5) {
-                console.log('Y validation is TRUE')
-                $('#for_Y').text('');
-                return true
+    if (value === ''){
+        $('#for_R').text('');
+        return false
+    }
+    else {
+        if (!isNaN(Number(value))) {
+            if (value >= -5) {
+                if (value <= 5) {
+                    console.log('Y validation is TRUE')
+                    $('#for_Y').text('');
+                    return true
+                } else {
+                    $('#for_Y').text(errorMessage);
+                    return false;
+                }
             } else {
                 $('#for_Y').text(errorMessage);
                 return false;
@@ -120,9 +134,6 @@ function yValueCheck(value) {
             $('#for_Y').text(errorMessage);
             return false;
         }
-    } else {
-        $('#for_Y').text(errorMessage);
-        return false;
     }
 }
 
@@ -131,6 +142,7 @@ function rValueCheck(value) {
 
     if (value === ''){
         $('#for_R').text('');
+        return false
     }
     else {
         if (!isNaN(Number(value))) {
