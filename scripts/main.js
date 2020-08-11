@@ -95,17 +95,34 @@ $(document).ready(function(){
         rValueCheck($(this).val());
     });
 
-    $('.form_button').on('click', function (){
-        if (getY && getR){
-            let request = new FormData(document.forms.namedItem('notes'));
+    let request = new FormData(document.forms.namedItem('notes'));
 
-            let xhrRequest = new XMLHttpRequest();
-            xhrRequest.open("POST", "scripts/script.php");
-            console.log(request);
-            xhrRequest.send(request);
+    let xhrRequest = new XMLHttpRequest();
+    
+    $('.form_button').on('click', function (){
+
+        if (getY && getR){
+
+            fetch('scripts/script.php', {
+                method: 'POST',
+                body: request
+            });
+
+            //xhrRequest.open("POST", "scripts/script.php");
+            //xhrRequest.send(request);
         }
     });
 
+
+    
+    xhrRequest.onreadystatechange = function () {
+        if (xhrRequest.readyState == 4){
+            if (xhrRequest.status == 200){
+                $('.answer').text('xhrRequest.responseText');
+            }
+        }
+    };
+    
 });
 
 function yValueCheck(value) {
