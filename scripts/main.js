@@ -118,7 +118,8 @@ $(document).ready(function(){
     xhrRequest.onreadystatechange = function () {
         if (xhrRequest.readyState == 4){
             if (xhrRequest.status == 200){
-                $('.answer').text('xhrRequest.responseText');
+                $('.answer').text(xhrRequest.responseText);
+                console.log(xhrRequest.responseText);
             }
         }
     };
