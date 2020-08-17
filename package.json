@@ -1,0 +1,10 @@
+{
+  "name": "test-site",
+  "version": "1.0.0",
+  "description": "Repository for first lab/",
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}
