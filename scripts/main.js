@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 //прямоугольник
 ctx.fillStyle = "rgba(245, 117, 224, 0.46)";
-ctx.fillRect(150, 180, 140, 70)
+ctx.fillRect(150, 180, 140, 70);
 
 //дуга
 ctx.moveTo(150, 180);
@@ -71,7 +71,7 @@ ctx.stroke();
 ctx.moveTo(145, 10);
 ctx.lineTo(150, 0);
 ctx.lineTo(155, 10);
-ctx.stroke()
+ctx.stroke();
 ctx.closePath();
 
 ctx.font = "15px Verdana";
@@ -95,21 +95,27 @@ $(document).ready(function(){
         rValueCheck($(this).val());
     });
 
+    let getX = $('input[name=X]:checked');
+
+    if (getX){
+        console.log('X validation is TRUE');
+    };
+
     let request = new FormData(document.forms.namedItem('notes'));
 
     let xhrRequest = new XMLHttpRequest();
     
     $('.form_button').on('click', function (){
 
-        if (getY && getR){
+        if (getY && getR && getX){
 
             fetch('scripts/script.php', {
                 method: 'POST',
                 body: request
-            });
+            })
+                .then(response => response.json())
+                .then(result => console.log(result))
 
-            //xhrRequest.open("POST", "scripts/script.php");
-            //xhrRequest.send(request);
         }
     });
 
@@ -131,7 +137,7 @@ function yValueCheck(value) {
 
     if (value === ''){
         $('#for_R').text('');
-        return false
+        return false;
     }
     else {
         if (!isNaN(Number(value))) {
@@ -139,7 +145,7 @@ function yValueCheck(value) {
                 if (value <= 5) {
                     console.log('Y validation is TRUE')
                     $('#for_Y').text('');
-                    return true
+                    return true;
                 } else {
                     $('#for_Y').text(errorMessage);
                     return false;
@@ -160,7 +166,7 @@ function rValueCheck(value) {
 
     if (value === ''){
         $('#for_R').text('');
-        return false
+        return false;
     }
     else {
         if (!isNaN(Number(value))) {
@@ -168,7 +174,7 @@ function rValueCheck(value) {
                 if (value <= 5) {
                     console.log('R validation is TRUE')
                     $('#for_R').text('');
-                    return true
+                    return true;
                 } else {
                     $('#for_R').text(errorMessage);
                     return false;
