@@ -22,10 +22,10 @@ ctx.closePath();
 //оси
 ctx.fillStyle = "black";
 ctx.beginPath();
-ctx.moveTo(150,0);
+ctx.moveTo(150, 0);
 ctx.lineTo(150, 330);
 ctx.moveTo(0, 180)
-ctx.lineTo(330,180);
+ctx.lineTo(330, 180);
 ctx.closePath();
 ctx.stroke();
 
@@ -85,61 +85,54 @@ ctx.fillText("R", 5, 170);
 ctx.fillText("R", 160, 45);
 ctx.fillText("R", 160, 325);
 
-$(document).ready(function(){
 
-    let getY = $('#Y_input').on('change',function () {
+    let getY = $('#Y_input').on('change', function () {
         yValueCheck($(this).val());
     });
 
-    let getR = $('#R_input').on('change',function () {
+    let getR = $('#R_input').on('change', function () {
         rValueCheck($(this).val());
     });
 
     let getX = $('input[name=X]:checked');
 
-    if (getX){
+    if (getX) {
         console.log('X validation is TRUE');
-    };
+    }
 
-    let request = new FormData(document.forms.namedItem('notes'));
 
-    let xhrRequest = new XMLHttpRequest();
-    
-    $('.form_button').on('click', function (){
 
-        if (getY && getR && getX){
+    $('.form_button').on('click', function () {
+        let request = new FormData();
 
-            fetch('scripts/script.php', {
+        debugger
+
+        request.append("Y", $('#Y_input').val());
+        request.append("R", $('#R_input').val());
+        request.append("X", $('input[name=X]:checked').val());
+
+        console.log(request);
+
+        if (getY && getR && getX) {
+
+            fetch('server/script.php', {
                 method: 'POST',
                 body: request
             })
-                .then(response => response.json())
+                .then(response => response.text())
                 .then(result => console.log(result))
 
         }
     });
 
 
-    
-    xhrRequest.onreadystatechange = function () {
-        if (xhrRequest.readyState == 4){
-            if (xhrRequest.status == 200){
-                $('.answer').text(xhrRequest.responseText);
-                console.log(xhrRequest.responseText);
-            }
-        }
-    };
-    
-});
-
 function yValueCheck(value) {
     const errorMessage = 'Значение Y должно быть в пределах от -5 до 5.';
 
-    if (value === ''){
+    if (value === '') {
         $('#for_R').text('');
         return false;
-    }
-    else {
+    } else {
         if (!isNaN(Number(value))) {
             if (value >= -5) {
                 if (value <= 5) {
@@ -164,11 +157,10 @@ function yValueCheck(value) {
 function rValueCheck(value) {
     const errorMessage = 'Значение R должно быть в пределах от 2 до 5.'
 
-    if (value === ''){
+    if (value === '') {
         $('#for_R').text('');
         return false;
-    }
-    else {
+    } else {
         if (!isNaN(Number(value))) {
             if (value >= 2) {
                 if (value <= 5) {
