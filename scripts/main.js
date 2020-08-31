@@ -10,7 +10,8 @@ $rInput.on('change', function () {
     rValueCheck($(this).val());
 });
 
-$('.form_button').on('click', function () {
+$('.form_button').on('click', function (event) {
+    event.preventDefault();
     const isValidY = !isNaN(parseFloat($yInput.val()));
     const isValidR = !isNaN(parseFloat($rInput.val()));
     const isValidX = !isNaN(parseFloat($xInput.val()));
