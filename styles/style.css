@@ -1,16 +1,19 @@
+* {
+    font-family: fantasy;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     background-color: rgb(255, 255, 255);
-    background-image: url("../images/bg.jpg");
+    background-image: url("images/bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 h1 {
-    font-family: fantasy;
     font-size: 4em;
     font-weight: 600;
     text-shadow: 3px 3px 1px rgba(245, 117, 224, 0.46);
@@ -19,13 +22,11 @@ h1 {
 h3 {
     margin: 0;
     color: rgb(255, 255, 255);
-    font-family: fantasy;
     font-size: 20px;
     font-weight: 300;
 }
 
 label {
-    font-family: sans-serif;
     color: #6c7ffa;
     font-size: 15px;
 }
@@ -67,7 +68,6 @@ form {
     border-radius: 8px;
     outline: none;
     background-color: #92ddff;
-    font-family: sans-serif;
     font-size: 30px;
 }
 
@@ -109,7 +109,7 @@ form {
     background: #92ddff;
     width: 57px;
     font-size: 28px;
-    color: #0004ff;
+    color: white;
     margin: 3px 8px;
     text-align: center;
 }
@@ -130,8 +130,7 @@ form {
     outline: none;
     background-color: #7487ff;
     background-clip: border-box;
-    font-family: sans-serif;
-    font-size: 1.5em;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -169,17 +168,13 @@ canvas {
     display: block;
 }
 
-
-.ifmo {
-    margin: 3% auto 0;
-}
-
 table {
     width: 90%;
     margin: 30px auto;
     color: #7487ff;
-    font-family: sans-serif;
     font-size: 20px;
+    font-weight: lighter;
+
 }
 
 th, td {
