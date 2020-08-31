@@ -14,14 +14,8 @@ $r = (double)$_POST["R"];
 
 if (checkConditions($x, $y, $r)) {
     $result = checkArea($x, $y, $r);
-    $executionTime = microtime(true) - $startTime;
-    array_push($_SESSION["tableRows"], [
-        0 => $x,
-        1 => $y,
-        2 => $r,
-        3 => $result,
-        4 => $currentTime,
-        5 => $executionTime,]);
+    $executionTime = ((microtime(true) - $startTime) * (10**6)) . "мкс";
+    array_push($_SESSION["tableRows"], array( $x, $y, $r, $result, $currentTime, $executionTime));
 
     echo "
       <tr>
@@ -56,9 +50,9 @@ function checkConditions($x, $y, $r)
 
 function checkArea($x, $y, $r)
 {
-    if (($x >= 0 && $y >= 0 && $x <= $r / 2 && $y >= 2 - 2 * $x) ||
-        ($x > 0 && $y < 0 && $x <= $r && $y <= $r) ||
-        ($x < 0 && $y < 0 && (($x * $x + $y * $y) <= ($r / 2) * ($r / 2)))) {
+    if ((($x >= 0) && ($y >= 0) && ($x <= ($r / 2)) && ($y <= $r - 2 * $x)) ||
+        (($x > 0) && ($y < 0) && ($x <= $r) && ($y >= -$r)) ||
+        (($x < 0) && ($y < 0) && (($x * $x + $y * $y) <= ($r / 2) * ($r / 2)) && ($x >= -($r / 2)) && ($y >= -($r / 2)))) {
         return "<span>Попадает в область</span>";
     }
 
