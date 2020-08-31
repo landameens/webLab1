@@ -2,7 +2,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 //прямоугольник
-ctx.fillStyle = "rgba(245, 117, 224, 0.46)";
+ctx.fillStyle = "rgba(250,119,229,0.46)";
 ctx.fillRect(150, 180, 140, 70);
 
 //дуга
@@ -86,45 +86,38 @@ ctx.fillText("R", 160, 45);
 ctx.fillText("R", 160, 325);
 
 
-    let getY = $('#Y_input').on('change', function () {
+    let yExistence = $('#y_input').on('change', function () {
         yValueCheck($(this).val());
     });
 
-    let getR = $('#R_input').on('change', function () {
+    let rExistence = $('#r_input').on('change', function () {
         rValueCheck($(this).val());
     });
 
-    let getX = $('input[name=X]:checked');
-
-    if (getX) {
-        console.log('X validation is TRUE');
-    }
-
-
+    let xExistence = !isNaN(parseFloat($('input[name=x]:checked').val()));
 
     $('.form_button').on('click', function () {
         let request = new FormData();
 
-        debugger
-
-        request.append("Y", $('#Y_input').val());
-        request.append("R", $('#R_input').val());
-        request.append("X", $('input[name=X]:checked').val());
+        request.append("Y", $('#y_input').val());
+        request.append("R", $('#r_input').val());
+        request.append("X", $('input[name=x]:checked').val());
 
         console.log(request);
 
-        if (getY && getR && getX) {
+        debugger;
 
+        if (yExistence && rExistence && xExistence) {
             fetch('server/script.php', {
-                method: 'POST',
-                body: request
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"},
+                body: request,
             })
                 .then(response => response.text())
-                .then(result => console.log(result))
-
-        }
-    });
-
+                .then(function (serverAnswer) {
+                    document.getElementById("result").innerHTML = serverAnswer;
+                })
+        }});
 
 function yValueCheck(value) {
     const errorMessage = 'Значение Y должно быть в пределах от -5 до 5.';
@@ -180,5 +173,4 @@ function rValueCheck(value) {
             return false;
         }
     }
-
 }

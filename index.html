@@ -10,100 +10,51 @@
   <body>
 
   <header>
-    <div class="header">
-      <h1 class="header title">Лабораторная работа №1 <br> по "Веб-программированию"</h1>
+      <h1 class="title">Лабораторная работа №1 <br> по "Веб-программированию"</h1>
       <h3>Выполнила Кириллова Надежда Сергеевна<br>Группа P3213, вариант №2409</h3>
-    </div>
   </header>
 
   <main>
-    <div class="content">
-      <canvas id="canvas" width="350" height="350"></canvas>
-
-      <form name="notes" class="form">
-        <div class="form_input">
-          <div class="X_input" id="X_Choice">
-            <label for="X_Choice" id="X_label">X</label>
-            <input type="radio" class="radio_form_input" id="X_Choice_1" name="X" value="-2">
-            <label for="X_Choice_1">
-              <span data-hover="-2">-2</span>
-            </label>
-            <input type="radio" class="radio_form_input" id="X_Choice_2" name="X" value="-1,5">
-            <label for="X_Choice_2">
-              <span data-hover="-1,5">-1,5</span>
-            </label>
-            <input type="radio" class="radio_form_input" id="X_Choice_3" name="X" value="-1">
-            <label for="X_Choice_3">
-              <span data-hover="-1">-1</span>
-            </label>
-            <input type="radio" class="radio_form_input" id="X_Choice_4" name="X" value="-0,5">
-            <label for="X_Choice_4">
-              <span data-hover="-0,5">-0,5</span>
-            </label>
-            <input type="radio" class="radio_form_input" id="X_Choice_5" name="X" value="0">
-            <label for="X_Choice_5">
-              <span data-hover="0">0</span>
-            </label>
-            <input type="radio" class="radio_form_input" id="X_Choice_6" name="X" value="0,5">
-            <label for="X_Choice_6">
-              <span data-hover="0,5">0,5</span>
-            </label>
-            <input type="radio" class="radio_form_input" id="X_Choice_7" name="X" value="1">
-            <label for="X_Choice_7">
-              <span data-hover="1">1</span>
-            </label>
-            <input type="radio" class="radio_form_input" id="X_Choice_8" name="X" value="1,5">
-            <label for="X_Choice_8">
-              <span data-hover="1,5">1,5</span>
-            </label>
-            <input type="radio" class="radio_form_input" id="X_Choice_9" name="X" value="2">
-            <label for="X_Choice_9">
-              <span data-hover="2">2</span>
-            </label>
+      <form>
+          <label for="x_input" id="for_x"></label><input id="x_input" class="form_input" placeholder="X" disabled>
+          <div class="x-input">
+              <input type="radio" name="x" id="X_Choice_1" class="form_radio_btn" value="-2">
+              <label for="X_Choice_1"><span>-2</span></label>
+              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_2"  value="-1.5">
+              <label for="X_Choice_2"><span>-1,5</span></label>
+              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_3" value="-1">
+              <label for="X_Choice_3"><span>-1</span></label>
+              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_4" value="-0.5">
+              <label for="X_Choice_4"><span>-0,5</span></label>
+              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_5" value="0">
+              <label for="X_Choice_5"><span>0</span></label>
+              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_6" value="0.5">
+              <label for="X_Choice_6"><span>0,5</span></label>
+              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_7" value="1">
+              <label for="X_Choice_7"><span>1</span></label>
+              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_8" value="1.5">
+              <label for="X_Choice_8"><span>1,5</span></label>
+              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_9" value="2">
+              <label for="X_Choice_9"><span>2</span></label>
           </div>
-        </div>
-        <p id="for_Y"></p>
-        <input id="Y_input" name="Y" class="form_input" placeholder="Y">
-        <p id="for_R"></p>
-        <input id="R_input" name="R" class="form_input" placeholder="R">
-        <button class="form_button" type="submit">Узнать ответ</button>
+        
+        <label for="y_input" id="for_Y"></label><input id="y_input" class="form_input" placeholder="Y">
+        <label for="r_input" id="for_R"></label><input id="r_input" class="form_input" placeholder="R">
+        <button class="form_button" type="submit" formmethod="post" formaction="server/script.php">Узнать ответ</button>
       </form>
 
-      <p class="answer"></p>
-    </div>
-    <div class="clear"></div>
+    <canvas id="canvas" width="350" height="350"></canvas>
 
     <table>
       <tr>
-        <th>X</th>
-        <th>Y</th>
-        <th>R</th>
-        <th>Result</th>
-        <th>Время выполнения</th>
-        <th>Текущее время</th>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td id="result" colspan="5"><span>Результаты отсутсвуют</span></td>
       </tr>
     </table>
     <a href="https://github.com/landameens" class="link-to-page" target="_blank"><img src="images/dbl.jpg" alt=""></a>
   </main>
 
   <footer>
-    <a href="https://ifmo.ru/ru"><img alt="Логотип ИТМО" src="images/itmo-logo.png"></a>
+    <a href="https://ifmo.ru/ru"><img alt="Логотип ИТМО" title="Перейти на сайт университета" src="images/itmo-logo.png"></a>
   </footer>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
