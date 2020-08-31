@@ -15,15 +15,15 @@ $r = (double)$_POST["R"];
 if (checkConditions($x, $y, $r)) {
     $result = checkArea($x, $y, $r);
     $executionTime = microtime(true) - $startTime;
-    $_SESSION["tableRows"][] = "<tr>
-    <td>$x</td>
-    <td>$y</td>
-    <td>$r</td>
-    <td>$result</td>
-    <td>$currentTime</td>
-    <td>$executionTime</td>
-    </tr>";
-    echo "<table id='outputTable'>
+    array_push($_SESSION["tableRows"], [
+        0 => $x,
+        1 => $y,
+        2 => $r,
+        3 => $result,
+        4 => $currentTime,
+        5 => $executionTime,]);
+
+    echo "
       <tr>
         <th>X</th>
         <th>Y</th>
@@ -33,15 +33,19 @@ if (checkConditions($x, $y, $r)) {
         <th>Время выполнения</th>
       </tr>";
     foreach ($_SESSION["tableRows"] as $tableRow) {
-        echo $tableRow;
+        echo "<tr>
+        <td>$tableRow[0]</td>
+        <td>$tableRow[1]</td>
+        <td>$tableRow[2]</td>
+        <td>$tableRow[3]</td>
+        <td>$tableRow[4]</td>
+        <td>$tableRow[5]</td>
+      </tr>";
     }
-    echo "</table>";
 } else {
     http_response_code(400);
     return;
 }
-
-echo $result;
 
 
 function checkConditions($x, $y, $r)

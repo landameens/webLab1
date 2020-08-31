@@ -207,24 +207,11 @@ canvas {
     margin: 10px;
 }
 
-table {
-    width: 100%; /* Ширина таблицы */
-    background: transparent; /* Цвет фона таблицы */
-    color: #7487ff; /* Цвет текста */
-    border: 1px #1f2029;
-    padding: 12px 32px;
-    border-radius: 8px;
-    outline: none;
-    font-family: sans-serif;
-    font-size: 1.5em;
-    font-weight: 700;
+table{
+    width: 90%;
+    margin: 30px auto;
 }
 
-td, th {
-    position: relative;
-    display: block;
+th, td {
     text-align: center;
-    margin: auto;
-    background: transparent; /* Цвет фона ячеек */
-    padding: 5px; /* Поля вокруг текста */
 }

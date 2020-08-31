@@ -1,33 +1,36 @@
-let validateY = $('#y_input').on('change', function () {
+const $yInput = $('#y_input');
+const $rInput = $('#r_input');
+const $xInput = $('input[name=x]:checked');
+
+$yInput.on('change', function () {
     yValueCheck($(this).val());
 });
 
-let validateR = $('#r_input').on('change', function () {
+$rInput.on('change', function () {
     rValueCheck($(this).val());
 });
 
-let validateX = !isNaN(parseFloat($('input[name=x]:checked').val()));
-
 $('.form_button').on('click', function () {
-    let request = new FormData();
+    const isValidY = !isNaN(parseFloat($yInput.val()));
+    const isValidR = !isNaN(parseFloat($rInput.val()));
+    const isValidX = !isNaN(parseFloat($xInput.val()));
 
-    request.append("Y", $('#y_input').val());
-    request.append("R", $('#r_input').val());
-    request.append("X", $('input[name=x]:checked').val());
+    if (isValidY && isValidR && isValidX) {
+        const request = new FormData();
 
-    console.log(request);
+        request.append("Y", $yInput.val());
+        request.append("R", $rInput.val());
+        request.append("X", $xInput.val());
 
-    let yExistence = !isNaN(parseFloat($('#y_input').val()));
-    let rExistence = !isNaN(parseFloat($('#r_input').val()));
-    let xExistence = !isNaN(parseFloat($('input[name=x]:checked').val()));
-
-    if (yExistence && rExistence && xExistence) {
         fetch('server/script.php', {
             method: "POST",
             body: request,
         })
             .then(response => response.text())
-            .then(result => console.log(result))
+            .then(result => {
+                console.log(result);
+                $("table").html(result);
+            })
     }
 });
 
