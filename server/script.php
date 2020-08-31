@@ -1,7 +1,5 @@
 <?php
-echo '<span>Дурачокок</span>';
-
-date_default_timezone_set('UTC');
+date_default_timezone_set('Europe/Moscow');
 session_start();
 if (!isset($_SESSION["tableRows"])) {
     $_SESSION["tableRows"] = array();
@@ -30,9 +28,9 @@ if (checkConditions($x, $y, $r)) {
         <th>X</th>
         <th>Y</th>
         <th>R</th>
-        <th>Result</th>
-        <th>Время выполнения</th>
+        <th>Результат</th>
         <th>Текущее время</th>
+        <th>Время выполнения</th>
       </tr>";
     foreach ($_SESSION["tableRows"] as $tableRow) {
         echo $tableRow;

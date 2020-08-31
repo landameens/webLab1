@@ -114,9 +114,7 @@ ctx.fillText("R", 160, 325);
                 body: request,
             })
                 .then(response => response.text())
-                .then(function (serverAnswer) {
-                    document.getElementById("result").innerHTML = serverAnswer;
-                })
+                .then(result => console.log(result))
         }});
 
 function yValueCheck(value) {
