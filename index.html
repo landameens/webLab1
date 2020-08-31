@@ -15,35 +15,44 @@
 </header>
 
 <main>
-    <form>
-        <label for="x_input" id="for_x"></label><input id="x_input" class="form_input" placeholder="X" disabled>
-        <div class="x-input">
-            <input type="radio" name="x" id="X_Choice_1" class="form_radio_btn" value="-2">
-            <label for="X_Choice_1"><span>-2</span></label>
-            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_2" value="-1.5">
-            <label for="X_Choice_2"><span>-1,5</span></label>
-            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_3" value="-1">
-            <label for="X_Choice_3"><span>-1</span></label>
-            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_4" value="-0.5">
-            <label for="X_Choice_4"><span>-0,5</span></label>
-            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_5" value="0">
-            <label for="X_Choice_5"><span>0</span></label>
-            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_6" value="0.5">
-            <label for="X_Choice_6"><span>0,5</span></label>
-            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_7" value="1">
-            <label for="X_Choice_7"><span>1</span></label>
-            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_8" value="1.5">
-            <label for="X_Choice_8"><span>1,5</span></label>
-            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_9" value="2">
-            <label for="X_Choice_9"><span>2</span></label>
-        </div>
+    <div class="flex-container">
+        <form>
+            <label for="x_input" id="for_x"></label><input id="x_input" class="form_input" placeholder="X" disabled>
+            <div class="x-input">
+                <div class="flex-container">
+                    <input type="radio" name="x" id="X_Choice_1" class="form_radio_btn" value="-2">
+                    <label for="X_Choice_1"><span>-2</span></label>
+                    <input type="radio" name="x" class="form_radio_btn" id="X_Choice_2" value="-1.5">
+                    <label for="X_Choice_2"><span>-1,5</span></label>
+                    <input type="radio" name="x" class="form_radio_btn" id="X_Choice_3" value="-1">
+                    <label for="X_Choice_3"><span>-1</span></label>
+                </div>
+                <div class="flex-container">
+                    <input type="radio" name="x" class="form_radio_btn" id="X_Choice_4" value="-0.5">
+                    <label for="X_Choice_4"><span>-0,5</span></label>
+                    <input type="radio" name="x" class="form_radio_btn" id="X_Choice_5" value="0">
+                    <label for="X_Choice_5"><span>0</span></label>
+                    <input type="radio" name="x" class="form_radio_btn" id="X_Choice_6" value="0.5">
+                    <label for="X_Choice_6"><span>0,5</span></label>
+                </div>
+                <div class="flex-container">
+                    <input type="radio" name="x" class="form_radio_btn" id="X_Choice_7" value="1">
+                    <label for="X_Choice_7"><span>1</span></label>
+                    <input type="radio" name="x" class="form_radio_btn" id="X_Choice_8" value="1.5">
+                    <label for="X_Choice_8"><span>1,5</span></label>
+                    <input type="radio" name="x" class="form_radio_btn" id="X_Choice_9" value="2">
+                    <label for="X_Choice_9"><span>2</span></label>
+                </div>
+            </div>
 
-        <label for="y_input" id="for_Y"></label><input id="y_input" class="form_input" placeholder="Y">
-        <label for="r_input" id="for_R"></label><input id="r_input" class="form_input" placeholder="R">
-        <button class="form_button">Узнать ответ</button>
-    </form>
+            <label for="y_input" id="for_Y"></label><input id="y_input" class="form_input" placeholder="Y">
+            <label for="r_input" id="for_R"></label><input id="r_input" class="form_input" placeholder="R">
+            <button class="form_button">Узнать ответ</button>
+        </form>
 
-    <canvas id="canvas" width="350" height="350"></canvas>
+        <canvas id="canvas" width="350" height="350"></canvas>
+
+    </div>
 
     <table>
         <tr>
