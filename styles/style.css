@@ -1,3 +1,5 @@
+
+
 html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
@@ -15,7 +17,6 @@ body {
 }
 
 h1 {
-    position: relative;
     font-family: fantasy;
     font-size: 4em;
     font-weight: 600;
@@ -24,7 +25,6 @@ h1 {
 }
 
 h3 {
-    position: relative;
     margin: 0;
     color: rgb(255, 255, 255);
     font-family: fantasy;
@@ -33,8 +33,7 @@ h3 {
     display: block;
 }
 
-p {
-    position: relative;
+label {
     font-family: sans-serif;
     color: #6c7ffa;
     font-size: 15px;
@@ -69,7 +68,6 @@ main {
 
 form {
     display: inline-block;
-    position: relative;
     width: 600px;
     text-align: center;
     margin-left: 10%;
@@ -113,7 +111,6 @@ form {
     display: inline-block;
     margin-right: 7px;
     width: 60px;
-    /*appearance: none;*/
 }
 
 .form_radio_btn + label {
@@ -132,8 +129,6 @@ form {
     text-align: center;
 }
 
-
-/* Hover */
 .form_radio_btn + label:hover {
     transition: transform 0.3s ease-out;
     color: #cf59b1;
@@ -165,7 +160,6 @@ button:hover {
 img {
     width: 150px;
     display: block;
-    position: relative;
     margin: 0 auto;
 }
 
@@ -175,7 +169,6 @@ canvas {
     object-position: left;
     margin-left: 13%;
     margin-right: 10%;
-    position: relative;
 }
 
 .link-to-page {
@@ -210,6 +203,9 @@ canvas {
 table{
     width: 90%;
     margin: 30px auto;
+    color: #7487ff;
+    font-family: sans-serif;
+    font-size: 20px;
 }
 
 th, td {

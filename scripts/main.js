@@ -1,6 +1,5 @@
 const $yInput = $('#y_input');
 const $rInput = $('#r_input');
-const $xInput = $('input[name=x]:checked');
 
 $yInput.on('change', function () {
     yValueCheck($(this).val());
@@ -12,9 +11,11 @@ $rInput.on('change', function () {
 
 $('.form_button').on('click', function (event) {
     event.preventDefault();
+    const $xInput = $('input[name=x]:checked');
+
     const isValidY = !isNaN(parseFloat($yInput.val()));
     const isValidR = !isNaN(parseFloat($rInput.val()));
-    const isValidX = !isNaN(parseFloat($xInput.val()));
+    const isValidX = $xInput.val();
 
     if (isValidY && isValidR && isValidX) {
         const request = new FormData();
