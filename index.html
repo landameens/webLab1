@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Lab_1</title>
     <link rel="shortcut icon" href="images/15.ico" type="image/x-icon">
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-  </head>
-  <body>
+</head>
+<body>
 
-  <header>
-      <h1 class="title">Лабораторная работа №1 <br> по "Веб-программированию"</h1>
-      <h3>Выполнила Кириллова Надежда Сергеевна<br>Группа P3213, вариант №2409</h3>
-  </header>
+<header>
+    <h1 class="title">Лабораторная работа №1 <br> по "Веб-программированию"</h1>
+    <h3>Выполнила Кириллова Надежда Сергеевна<br>Группа P3213, вариант №2409</h3>
+</header>
 
-  <main>
-      <form>
-          <label for="x_input" id="for_x"></label><input id="x_input" class="form_input" placeholder="X" disabled>
-          <div class="x-input">
-              <input type="radio" name="x" id="X_Choice_1" class="form_radio_btn" value="-2">
-              <label for="X_Choice_1"><span>-2</span></label>
-              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_2"  value="-1.5">
-              <label for="X_Choice_2"><span>-1,5</span></label>
-              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_3" value="-1">
-              <label for="X_Choice_3"><span>-1</span></label>
-              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_4" value="-0.5">
-              <label for="X_Choice_4"><span>-0,5</span></label>
-              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_5" value="0">
-              <label for="X_Choice_5"><span>0</span></label>
-              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_6" value="0.5">
-              <label for="X_Choice_6"><span>0,5</span></label>
-              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_7" value="1">
-              <label for="X_Choice_7"><span>1</span></label>
-              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_8" value="1.5">
-              <label for="X_Choice_8"><span>1,5</span></label>
-              <input type="radio" name="x" class="form_radio_btn" id="X_Choice_9" value="2">
-              <label for="X_Choice_9"><span>2</span></label>
-          </div>
-        
+<main>
+    <form>
+        <label for="x_input" id="for_x"></label><input id="x_input" class="form_input" placeholder="X" disabled>
+        <div class="x-input">
+            <input type="radio" name="x" id="X_Choice_1" class="form_radio_btn" value="-2">
+            <label for="X_Choice_1"><span>-2</span></label>
+            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_2" value="-1.5">
+            <label for="X_Choice_2"><span>-1,5</span></label>
+            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_3" value="-1">
+            <label for="X_Choice_3"><span>-1</span></label>
+            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_4" value="-0.5">
+            <label for="X_Choice_4"><span>-0,5</span></label>
+            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_5" value="0">
+            <label for="X_Choice_5"><span>0</span></label>
+            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_6" value="0.5">
+            <label for="X_Choice_6"><span>0,5</span></label>
+            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_7" value="1">
+            <label for="X_Choice_7"><span>1</span></label>
+            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_8" value="1.5">
+            <label for="X_Choice_8"><span>1,5</span></label>
+            <input type="radio" name="x" class="form_radio_btn" id="X_Choice_9" value="2">
+            <label for="X_Choice_9"><span>2</span></label>
+        </div>
+
         <label for="y_input" id="for_Y"></label><input id="y_input" class="form_input" placeholder="Y">
         <label for="r_input" id="for_R"></label><input id="r_input" class="form_input" placeholder="R">
         <button class="form_button" type="submit" formmethod="post" formaction="server/script.php">Узнать ответ</button>
-      </form>
+    </form>
 
     <canvas id="canvas" width="350" height="350"></canvas>
 
     <table>
-      <tr>
-        <td id="result" colspan="5"><span>Результаты отсутсвуют</span></td>
-      </tr>
+        <tr>
+            <td id="result" colspan="5"><span>Результаты отсутсвуют</span></td>
+        </tr>
     </table>
     <a href="https://github.com/landameens" class="link-to-page" target="_blank"><img src="images/dbl.jpg" alt=""></a>
-  </main>
+</main>
 
-  <footer>
-    <a href="https://ifmo.ru/ru"><img alt="Логотип ИТМО" title="Перейти на сайт университета" src="images/itmo-logo.png"></a>
-  </footer>
+<footer>
+    <a href="https://ifmo.ru/ru"><img alt="Логотип ИТМО" title="Перейти на сайт университета"
+                                      src="images/itmo-logo.png"></a>
+</footer>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="scripts/main.js"></script>
-  </body>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="scripts/canvas.js"></script>
+<script src="scripts/main.js"></script>
+</body>
 </html> 
