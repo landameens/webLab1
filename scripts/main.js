@@ -11,13 +11,18 @@ $rInput.on('change', function () {
 
 $('.form_button').on('click', function (event) {
     event.preventDefault();
-    const $xInput = $('input[name=x]:checked');
 
-    const isValidY = !isNaN(parseFloat($yInput.val()));
-    const isValidR = !isNaN(parseFloat($rInput.val()));
+    const $xInput = $('input[name=x]:checked');
     const isValidX = $xInput.val();
+    if (!isValidX){
+        $('#for_x').text('Выберите значение X.');
+    }
+
+    const isValidY =  yValueCheck($yInput.val());
+    const isValidR = rValueCheck($rInput.val());
 
     if (isValidY && isValidR && isValidX) {
+        $('#for_x').text('');
         const request = new FormData();
 
         request.append("Y", $yInput.val());
@@ -39,8 +44,8 @@ $('.form_button').on('click', function (event) {
 function yValueCheck(value) {
     const errorMessage = 'Значение Y должно быть в пределах от -5 до 5.';
 
-    if (value === '') {
-        $('#for_R').text('');
+    if (isNaN(parseFloat($yInput.val()))) {
+        $('#for_Y').text('Введите значение Y.');
         return false;
     } else {
         if (!isNaN(Number(value))) {
@@ -67,8 +72,8 @@ function yValueCheck(value) {
 function rValueCheck(value) {
     const errorMessage = 'Значение R должно быть в пределах от 2 до 5.'
 
-    if (value === '') {
-        $('#for_R').text('');
+    if (isNaN(parseFloat($rInput.val()))) {
+        $('#for_R').text('Введите значение R.');
         return false;
     } else {
         if (!isNaN(Number(value))) {

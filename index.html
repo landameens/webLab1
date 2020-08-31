@@ -5,7 +5,199 @@
     <title>Lab_1</title>
     <link rel="shortcut icon" href="images/15.ico" type="image/x-icon">
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            background-color: rgb(255, 255, 255);
+            background-image: url("images/bg.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        h1 {
+            font-family: fantasy;
+            font-size: 4em;
+            font-weight: 600;
+            text-shadow: 3px 3px 1px rgba(245, 117, 224, 0.46);
+        }
+
+        h3 {
+            margin: 0;
+            color: rgb(255, 255, 255);
+            font-family: fantasy;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        label {
+            font-family: sans-serif;
+            color: #6c7ffa;
+            font-size: 15px;
+        }
+
+        header {
+            padding: 8px 50px;
+            background-color: #7487ff;
+            margin-bottom: 45px;
+        }
+
+        header > .title {
+            color: #fff;
+            text-align: start;
+            margin: 0;
+        }
+
+        main {
+            margin: 0 auto;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+        }
+
+        form {
+            text-align: center;
+            margin-left: 10%;
+        }
+
+        .form_input {
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 16px;
+            padding: 8px 16px;
+            transition: transform 0.3s ease-out;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background-color: #92ddff;
+            font-family: sans-serif;
+            font-size: 30px;
+        }
+
+        #x_input {
+            margin-bottom: 7px;
+        }
+
+        .x-input {
+            margin-bottom: 16px;
+        }
+
+        .form_input::placeholder {
+            opacity: 0.6;
+            color: #0004ff;
+        }
+
+        .form_input:focus {
+            transition: transform 0.3s ease-out;
+            transform: scale(1.02, 1.02);
+        }
+
+        .form_radio_btn input[type=radio] {
+            display: none;
+        }
+
+        .form_radio_btn {
+            margin-right: 7px;
+            width: 60px;
+        }
+
+        .form_radio_btn + label {
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px 15px;
+            line-height: 34px;
+            border: 1px solid white;
+            border-radius: 8px;
+            user-select: none;
+            background: #92ddff;
+            width: 57px;
+            font-size: 28px;
+            color: #0004ff;
+            margin: 3px 8px;
+            text-align: center;
+        }
+
+        .form_radio_btn + label:hover {
+            transition: transform 0.3s ease-out;
+            color: #cf59b1;
+            border: 1px solid #7487ff;
+        }
+
+        .form_button {
+            padding: 12px 32px;
+            transition: all 0.3s ease-out;
+            text-transform: uppercase;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background-color: #7487ff;
+            background-clip: border-box;
+            font-family: sans-serif;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        button:hover {
+            transition: all 0.3s ease-out;
+            transform: scale(1.02, 1.02);
+            box-shadow: rgba(255, 255, 255, 0.3) 0 0 16px 2px;
+        }
+
+        img {
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        canvas {
+            padding-right: 0;
+            object-position: left;
+            margin-left: 13%;
+            margin-right: 10%;
+        }
+
+        .link-to-page {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 20000;
+            cursor: pointer;
+            width: 50px;
+        }
+
+        .link-to-page img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        .ifmo {
+            margin: 3% auto 0;
+        }
+
+        table {
+            width: 90%;
+            margin: 30px auto;
+            color: #7487ff;
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        footer {
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,7 +209,8 @@
 <main>
     <div class="flex-container">
         <form>
-            <label for="x_input" id="for_x"></label><input id="x_input" class="form_input" placeholder="X" disabled>
+            <input id="x_input" class="form_input" placeholder="X" disabled>
+            <label for="x_input" id="for_x"></label>
             <div class="x-input">
                 <div class="flex-container">
                     <input type="radio" name="x" id="X_Choice_1" class="form_radio_btn" value="-2">
@@ -64,11 +257,12 @@
             <th>Время выполнения</th>
         </tr>
     </table>
-    <a href="https://github.com/landameens/webLab1" class="link-to-page" target="_blank"><img src="images/dbl.jpg" alt=""></a>
+    <a href="https://github.com/landameens/webLab1" class="link-to-page" target="_blank"><img src="images/dbl.jpg"
+                                                                                              alt=""></a>
 </main>
 
 <footer>
-    <a href="https://ifmo.ru/ru"><img alt="Логотип ИТМО" title="Перейти на сайт университета"
+    <a href="https://ifmo.ru/ru"><img class="ifmo" alt="Логотип ИТМО" title="Перейти на сайт университета"
                                       src="images/itmo-logo.png"></a>
 </footer>
 

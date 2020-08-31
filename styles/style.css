@@ -28,10 +28,6 @@ label {
     font-family: sans-serif;
     color: #6c7ffa;
     font-size: 15px;
-    font-weight: 200;
-    line-height: 2;
-    letter-spacing: 1px;
-    text-align: left;
 }
 
 header {
@@ -50,7 +46,7 @@ main {
     margin: 0 auto;
 }
 
-.flex-container{
+.flex-container {
     display: flex;
     align-items: center;
 }
@@ -73,6 +69,10 @@ form {
     background-color: #92ddff;
     font-family: sans-serif;
     font-size: 30px;
+}
+
+#x_input {
+    margin-bottom: 7px;
 }
 
 .x-input {
@@ -174,7 +174,7 @@ canvas {
     margin: 3% auto 0;
 }
 
-table{
+table {
     width: 90%;
     margin: 30px auto;
     color: #7487ff;
