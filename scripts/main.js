@@ -2,11 +2,11 @@ const $yInput = $('#y_input');
 const $rInput = $('#r_input');
 
 $yInput.on('change', function () {
-    yValueCheck($(this).val());
+    yValueCheck($(this).val().replace(',', '.'));
 });
 
 $rInput.on('change', function () {
-    rValueCheck($(this).val());
+    rValueCheck($(this).val().replace(',', '.'));
 });
 
 $('.form_button').on('click', function (event) {
@@ -18,15 +18,16 @@ $('.form_button').on('click', function (event) {
         $('#for_x').text('Выберите значение X.');
     }
 
-    const isValidY =  yValueCheck($yInput.val());
-    const isValidR = rValueCheck($rInput.val());
+    const isValidY =  yValueCheck($yInput.val().replace(',', '.'));
+    console.log()
+    const isValidR = rValueCheck($rInput.val().replace(',', '.'));
 
     if (isValidY && isValidR && isValidX) {
         $('#for_x').text('');
         const request = new FormData();
 
-        request.append("Y", $yInput.val());
-        request.append("R", $rInput.val());
+        request.append("Y", $yInput.val().replace(',', '.'));
+        request.append("R", $rInput.val().replace(',', '.'));
         request.append("X", $xInput.val());
 
         fetch('server/script.php', {
